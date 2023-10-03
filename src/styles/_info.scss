@@ -1,0 +1,35 @@
+@use 'variaveis';
+@use 'mixins';
+
+.info {
+    padding-bottom: 11vh;
+    background-image: url(../../src/images/img18-modificada.jpg);
+    background-position: center;
+    background-size: cover;
+
+    &__sinopse {
+        max-width: 70%;
+        margin: auto;
+        @include mixins.flex-column-start-center;
+
+        &-text {
+            text-align: center;
+
+            p {
+                margin-top: 8px;
+                width: 100%;
+            }
+        }
+    }
+
+    &__lista {
+        margin-top: 16px;
+        max-width: 70%;
+        margin: auto;
+        @include mixins.flex-space-between-wrap;
+
+        &__producao, &__cast {
+            @include mixins.text-styles(variaveis.$textColorSecundary);
+        }
+    }
+}

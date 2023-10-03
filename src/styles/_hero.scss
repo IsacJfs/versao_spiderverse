@@ -1,0 +1,48 @@
+@use 'variaveis';
+@use 'mixins';
+
+.hero {
+    &__content-wrapper {
+        position: relative;
+        height: calc(100vh - 34px);
+    }
+
+    &__content-video {
+        @include mixins.absolute-position;
+        @include mixins.responsive-iframe(100%, 100%);
+        
+        video {
+            @include mixins.responsive-iframe(100%, 100%);
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        @include mixins.absolute-position(0, 0, 2);
+        @include mixins.responsive-iframe(100%, 100%);
+        @include mixins.flex-center;
+        background-color: none;
+    }
+
+    &__content-titulo {
+        @include mixins.flex-center;
+        flex-direction: column;
+
+        &__img {
+            @include mixins.flex-center;
+            flex-direction: column;
+
+            img {
+                width: 75%;
+            }
+        }
+    }
+
+    .cta-button {
+        @include mixins.button-styles(
+            variaveis.$bgButtonSecondary, 
+            variaveis.$textColorSecundary, 
+            variaveis.$borderButton
+        );
+    }
+}

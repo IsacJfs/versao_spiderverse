@@ -1,0 +1,47 @@
+@use 'variaveis';
+@use 'mixins';
+
+.footer {
+    padding: 26px 8px;
+
+    &__container {
+        max-width: 1024px;
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;        
+    }
+
+    &__logo {
+        width: 80%;
+        margin: 0 auto 10px;
+    }
+
+    &__links {
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &__item {
+            display: inline-block;
+            
+            a {
+                text-decoration: none;
+                padding: 8px 16px;
+                display: block;
+                @include mixins.font-small;
+                @include mixins.text-styles(variaveis.$textColorSecundary);
+
+                &:hover {
+                    color: variaveis.$textColorSecundary;
+                }
+            }
+        }
+
+    }
+    p {
+        margin-bottom: 20px;
+        @include mixins.font-small;
+    }
+}

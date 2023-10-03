@@ -1,0 +1,43 @@
+@use 'variaveis';
+@use 'hero';
+@use 'trailer';
+@use 'info';
+@use 'footer';
+@use 'mixins';
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: variaveis.$bgPrincipal;
+    color: variaveis.$textColorPrincipal;
+}
+
+.header {
+    padding: 0px 10px;
+    padding-top: 0;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 5px;
+        flex-wrap: wrap;
+        &__list {
+            display: flex;
+            list-style: none;
+
+            li {
+                margin-left: 16px;
+
+                img {
+                    display: block;
+                    max-width: 20px;
+                    width: 100%;
+                    align-content: center;
+                }
+            }
+        }
+    }
+}
